@@ -1,0 +1,4077 @@
+{
+  "name": "Reynard Soft7",
+  "symbol": "SOFT7",
+  "chainId": 4663,
+  "maxSupply": 777,
+  "firstWave": 7,
+  "weeklyWave": 77,
+  "mint": "closed",
+  "payout": "0xe53bdb2118585d5B2cD06a117d3A036AFA70677a",
+  "royaltyBps": 750,
+  "tokens": [
+    {
+      "id": 1,
+      "wave": 0,
+      "status": "proof",
+      "name": "Reynard Soft7 Proof Tier 1",
+      "description": "reynard-soft7 mascot cards on robinhood chain. ten percent of every mint routes back to soft7 holders proportional to what they hold. stake your card, feed the treasury, pull when you're ready.",
+      "image": "proofs/art/01.png",
+      "attributes": [
+        {
+          "trait_type": "tier",
+          "value": 1
+        },
+        {
+          "trait_type": "color",
+          "value": "Crimson"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Amber Lock"
+        },
+        {
+          "trait_type": "signature",
+          "value": "Brow Line"
+        },
+        {
+          "trait_type": "globe",
+          "value": "Root Stone"
+        }
+      ],
+      "mascot": "fox"
+    },
+    {
+      "id": 2,
+      "wave": 0,
+      "status": "proof",
+      "name": "Reynard Soft7 Proof Tier 2",
+      "description": "reynard-soft7 mascot cards on robinhood chain. ten percent of every mint routes back to soft7 holders proportional to what they hold. stake your card, feed the treasury, pull when you're ready.",
+      "image": "proofs/art/02.png",
+      "attributes": [
+        {
+          "trait_type": "tier",
+          "value": 2
+        },
+        {
+          "trait_type": "color",
+          "value": "Amber"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Coal Lock"
+        },
+        {
+          "trait_type": "signature",
+          "value": "Cheek Marks"
+        },
+        {
+          "trait_type": "globe",
+          "value": "Sacral Clay"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "wave": 0,
+      "status": "proof",
+      "name": "Reynard Soft7 Proof Tier 3",
+      "description": "reynard-soft7 mascot cards on robinhood chain. ten percent of every mint routes back to soft7 holders proportional to what they hold. stake your card, feed the treasury, pull when you're ready.",
+      "image": "proofs/art/03.png",
+      "attributes": [
+        {
+          "trait_type": "tier",
+          "value": 3
+        },
+        {
+          "trait_type": "color",
+          "value": "Gold"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Pale Lock"
+        },
+        {
+          "trait_type": "signature",
+          "value": "Solar Tick"
+        },
+        {
+          "trait_type": "globe",
+          "value": "Solar Dust"
+        }
+      ],
+      "mascot": "tiger"
+    },
+    {
+      "id": 4,
+      "wave": 0,
+      "status": "proof",
+      "name": "Reynard Soft7 Proof Tier 4",
+      "description": "reynard-soft7 mascot cards on robinhood chain. ten percent of every mint routes back to soft7 holders proportional to what they hold. stake your card, feed the treasury, pull when you're ready.",
+      "image": "proofs/art/04.png",
+      "attributes": [
+        {
+          "trait_type": "tier",
+          "value": 4
+        },
+        {
+          "trait_type": "color",
+          "value": "Green"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Amber Lock"
+        },
+        {
+          "trait_type": "signature",
+          "value": "Heart Band"
+        },
+        {
+          "trait_type": "globe",
+          "value": "Heart Moss"
+        }
+      ],
+      "mascot": "fox"
+    },
+    {
+      "id": 5,
+      "wave": 0,
+      "status": "proof",
+      "name": "Reynard Soft7 Proof Tier 5",
+      "description": "reynard-soft7 mascot cards on robinhood chain. ten percent of every mint routes back to soft7 holders proportional to what they hold. stake your card, feed the treasury, pull when you're ready.",
+      "image": "proofs/art/05.png",
+      "attributes": [
+        {
+          "trait_type": "tier",
+          "value": 5
+        },
+        {
+          "trait_type": "color",
+          "value": "Blue"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Amber Lock"
+        },
+        {
+          "trait_type": "signature",
+          "value": "Throat Outline"
+        },
+        {
+          "trait_type": "globe",
+          "value": "Throat Tide"
+        }
+      ],
+      "mascot": "fox"
+    },
+    {
+      "id": 6,
+      "wave": 0,
+      "status": "proof",
+      "name": "Reynard Soft7 Proof Tier 6",
+      "description": "reynard-soft7 mascot cards on robinhood chain. ten percent of every mint routes back to soft7 holders proportional to what they hold. stake your card, feed the treasury, pull when you're ready.",
+      "image": "proofs/art/06.png",
+      "attributes": [
+        {
+          "trait_type": "tier",
+          "value": 6
+        },
+        {
+          "trait_type": "color",
+          "value": "Indigo"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Ink Lock"
+        },
+        {
+          "trait_type": "signature",
+          "value": "Layered Contour"
+        },
+        {
+          "trait_type": "globe",
+          "value": "Brow Night"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "wave": 0,
+      "status": "proof",
+      "name": "Reynard Soft7 Proof Tier 7",
+      "description": "reynard-soft7 mascot cards on robinhood chain. ten percent of every mint routes back to soft7 holders proportional to what they hold. stake your card, feed the treasury, pull when you're ready.",
+      "image": "proofs/art/07.png",
+      "attributes": [
+        {
+          "trait_type": "tier",
+          "value": 7
+        },
+        {
+          "trait_type": "color",
+          "value": "Violet"
+        },
+        {
+          "trait_type": "eyes",
+          "value": "Band Lock"
+        },
+        {
+          "trait_type": "signature",
+          "value": "Crown Glyphs"
+        },
+        {
+          "trait_type": "globe",
+          "value": "Crown Gate"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 9,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 10,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 11,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 12,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 13,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 14,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 15,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 16,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 17,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 18,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 19,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 20,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 21,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 22,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 23,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 24,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 25,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 26,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 27,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 28,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 29,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 30,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 31,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 32,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 33,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 34,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 35,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 36,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 37,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 38,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 39,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 40,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 41,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 42,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 43,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 44,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 45,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 46,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 47,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 48,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 49,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 50,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 51,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 52,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 53,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 54,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 55,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 56,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 57,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 58,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 59,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 60,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 61,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 62,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 63,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 64,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 65,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 66,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 67,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 68,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 69,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 70,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 71,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 72,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 73,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 74,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 75,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 76,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 77,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 78,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 79,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 80,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 81,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 82,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 83,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 84,
+      "wave": 1,
+      "status": "unpainted"
+    },
+    {
+      "id": 85,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 86,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 87,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 88,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 89,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 90,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 91,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 92,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 93,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 94,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 95,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 96,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 97,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 98,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 99,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 100,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 101,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 102,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 103,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 104,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 105,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 106,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 107,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 108,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 109,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 110,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 111,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 112,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 113,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 114,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 115,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 116,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 117,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 118,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 119,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 120,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 121,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 122,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 123,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 124,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 125,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 126,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 127,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 128,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 129,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 130,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 131,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 132,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 133,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 134,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 135,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 136,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 137,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 138,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 139,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 140,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 141,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 142,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 143,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 144,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 145,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 146,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 147,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 148,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 149,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 150,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 151,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 152,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 153,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 154,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 155,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 156,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 157,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 158,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 159,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 160,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 161,
+      "wave": 2,
+      "status": "unpainted"
+    },
+    {
+      "id": 162,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 163,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 164,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 165,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 166,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 167,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 168,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 169,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 170,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 171,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 172,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 173,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 174,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 175,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 176,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 177,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 178,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 179,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 180,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 181,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 182,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 183,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 184,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 185,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 186,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 187,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 188,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 189,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 190,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 191,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 192,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 193,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 194,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 195,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 196,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 197,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 198,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 199,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 200,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 201,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 202,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 203,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 204,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 205,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 206,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 207,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 208,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 209,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 210,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 211,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 212,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 213,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 214,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 215,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 216,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 217,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 218,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 219,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 220,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 221,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 222,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 223,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 224,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 225,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 226,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 227,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 228,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 229,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 230,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 231,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 232,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 233,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 234,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 235,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 236,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 237,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 238,
+      "wave": 3,
+      "status": "unpainted"
+    },
+    {
+      "id": 239,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 240,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 241,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 242,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 243,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 244,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 245,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 246,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 247,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 248,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 249,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 250,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 251,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 252,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 253,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 254,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 255,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 256,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 257,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 258,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 259,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 260,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 261,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 262,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 263,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 264,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 265,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 266,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 267,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 268,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 269,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 270,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 271,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 272,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 273,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 274,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 275,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 276,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 277,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 278,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 279,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 280,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 281,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 282,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 283,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 284,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 285,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 286,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 287,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 288,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 289,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 290,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 291,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 292,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 293,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 294,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 295,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 296,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 297,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 298,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 299,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 300,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 301,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 302,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 303,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 304,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 305,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 306,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 307,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 308,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 309,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 310,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 311,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 312,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 313,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 314,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 315,
+      "wave": 4,
+      "status": "unpainted"
+    },
+    {
+      "id": 316,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 317,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 318,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 319,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 320,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 321,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 322,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 323,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 324,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 325,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 326,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 327,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 328,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 329,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 330,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 331,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 332,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 333,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 334,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 335,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 336,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 337,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 338,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 339,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 340,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 341,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 342,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 343,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 344,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 345,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 346,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 347,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 348,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 349,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 350,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 351,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 352,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 353,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 354,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 355,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 356,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 357,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 358,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 359,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 360,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 361,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 362,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 363,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 364,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 365,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 366,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 367,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 368,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 369,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 370,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 371,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 372,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 373,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 374,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 375,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 376,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 377,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 378,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 379,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 380,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 381,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 382,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 383,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 384,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 385,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 386,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 387,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 388,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 389,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 390,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 391,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 392,
+      "wave": 5,
+      "status": "unpainted"
+    },
+    {
+      "id": 393,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 394,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 395,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 396,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 397,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 398,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 399,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 400,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 401,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 402,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 403,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 404,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 405,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 406,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 407,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 408,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 409,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 410,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 411,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 412,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 413,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 414,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 415,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 416,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 417,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 418,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 419,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 420,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 421,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 422,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 423,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 424,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 425,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 426,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 427,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 428,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 429,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 430,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 431,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 432,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 433,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 434,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 435,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 436,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 437,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 438,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 439,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 440,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 441,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 442,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 443,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 444,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 445,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 446,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 447,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 448,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 449,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 450,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 451,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 452,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 453,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 454,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 455,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 456,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 457,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 458,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 459,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 460,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 461,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 462,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 463,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 464,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 465,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 466,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 467,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 468,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 469,
+      "wave": 6,
+      "status": "unpainted"
+    },
+    {
+      "id": 470,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 471,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 472,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 473,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 474,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 475,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 476,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 477,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 478,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 479,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 480,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 481,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 482,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 483,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 484,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 485,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 486,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 487,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 488,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 489,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 490,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 491,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 492,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 493,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 494,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 495,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 496,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 497,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 498,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 499,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 500,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 501,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 502,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 503,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 504,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 505,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 506,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 507,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 508,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 509,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 510,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 511,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 512,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 513,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 514,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 515,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 516,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 517,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 518,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 519,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 520,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 521,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 522,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 523,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 524,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 525,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 526,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 527,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 528,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 529,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 530,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 531,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 532,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 533,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 534,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 535,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 536,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 537,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 538,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 539,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 540,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 541,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 542,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 543,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 544,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 545,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 546,
+      "wave": 7,
+      "status": "unpainted"
+    },
+    {
+      "id": 547,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 548,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 549,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 550,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 551,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 552,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 553,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 554,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 555,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 556,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 557,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 558,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 559,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 560,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 561,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 562,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 563,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 564,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 565,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 566,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 567,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 568,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 569,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 570,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 571,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 572,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 573,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 574,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 575,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 576,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 577,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 578,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 579,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 580,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 581,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 582,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 583,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 584,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 585,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 586,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 587,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 588,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 589,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 590,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 591,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 592,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 593,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 594,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 595,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 596,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 597,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 598,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 599,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 600,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 601,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 602,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 603,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 604,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 605,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 606,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 607,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 608,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 609,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 610,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 611,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 612,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 613,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 614,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 615,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 616,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 617,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 618,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 619,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 620,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 621,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 622,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 623,
+      "wave": 8,
+      "status": "unpainted"
+    },
+    {
+      "id": 624,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 625,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 626,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 627,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 628,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 629,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 630,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 631,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 632,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 633,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 634,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 635,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 636,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 637,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 638,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 639,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 640,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 641,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 642,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 643,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 644,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 645,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 646,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 647,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 648,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 649,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 650,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 651,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 652,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 653,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 654,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 655,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 656,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 657,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 658,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 659,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 660,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 661,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 662,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 663,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 664,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 665,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 666,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 667,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 668,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 669,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 670,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 671,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 672,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 673,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 674,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 675,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 676,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 677,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 678,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 679,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 680,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 681,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 682,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 683,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 684,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 685,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 686,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 687,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 688,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 689,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 690,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 691,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 692,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 693,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 694,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 695,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 696,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 697,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 698,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 699,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 700,
+      "wave": 9,
+      "status": "unpainted"
+    },
+    {
+      "id": 701,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 702,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 703,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 704,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 705,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 706,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 707,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 708,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 709,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 710,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 711,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 712,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 713,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 714,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 715,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 716,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 717,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 718,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 719,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 720,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 721,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 722,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 723,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 724,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 725,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 726,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 727,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 728,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 729,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 730,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 731,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 732,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 733,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 734,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 735,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 736,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 737,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 738,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 739,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 740,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 741,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 742,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 743,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 744,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 745,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 746,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 747,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 748,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 749,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 750,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 751,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 752,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 753,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 754,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 755,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 756,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 757,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 758,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 759,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 760,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 761,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 762,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 763,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 764,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 765,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 766,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 767,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 768,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 769,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 770,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 771,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 772,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 773,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 774,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 775,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 776,
+      "wave": 10,
+      "status": "unpainted"
+    },
+    {
+      "id": 777,
+      "wave": 10,
+      "status": "unpainted"
+    }
+  ]
+}

@@ -18,12 +18,15 @@ bash scripts/ci.sh
 
 That checks the wave cap, the stake dividend, the supply map, the proof PNG checksums, and compiles `contracts/Soft7MascotCards.sol` with solc 0.8.24.
 
+`DEVELOPERS.md` is the contract surface, the week-by-week cap, and the failures those checks report.
+
 Open `proofs/index.html` to see the seven proofs and the banner.
 
 ## Layout
 
 | Path | What it is |
 | --- | --- |
+| `DEVELOPERS.md` | Contract surface, wave table, and local-check failures. |
 | `contracts/Soft7MascotCards.sol` | 777-card contract. Proofs start unapproved. Waves start closed. |
 | `supply/catalog.json` | Token 1–777. Proofs, then unpainted slots. |
 | `proofs/art/` | Seven card PNGs and the banner, with SHA-256 sums. |

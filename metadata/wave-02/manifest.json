@@ -1,0 +1,18 @@
+{
+  "name": "Reynard Soft7",
+  "wave": 2,
+  "weekIndex": 1,
+  "tokenIdFrom": 8,
+  "tokenIdTo": 84,
+  "count": 77,
+  "chainId": 4663,
+  "mint": "closed",
+  "deploy": false,
+  "liveContract": "0x73D7b2611509C14078e16f572bE5aC7D91879DC2",
+  "liveMaxSupply": 7,
+  "missing": [
+    "image",
+    "attributes"
+  ],
+  "note": "Shells only. Images and the five card traits are unpainted. Do not mint and do not point the live supply-7 contract at this folder."
+}

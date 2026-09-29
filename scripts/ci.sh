@@ -19,4 +19,5 @@ print("PASSED: setBaseURI calldata encodes and is not sent")
 PY
 bash scripts/compile_proof.sh
 git diff --exit-code -- contracts/compiler-input.json
+bash scripts/test_contract.sh
 echo "PASSED: overall build"

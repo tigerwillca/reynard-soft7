@@ -34,7 +34,7 @@ contract Soft7MascotCardsTest {
         vm.chainId(4663);
     }
 
-    function test_waveCapStaysShutUntilWavesOpen() public {
+    function test_waveCapStaysShutUntilWavesOpen() public view {
         if (cards.waveCap() != 0) revert("closed");
         if (cards.proofsApproved()) revert("proofs");
         if (cards.opening() != 0) revert("opening");
@@ -161,6 +161,8 @@ contract Soft7MascotCardsTest {
         uint256 second = _mint(other);
         vm.prank(other);
         cards.stake(second);
+        vm.prank(holder);
+        cards.pull();
 
         _mint(third);
         uint256 half = (PRICE / 10) / 2;

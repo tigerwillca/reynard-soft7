@@ -11,7 +11,7 @@ from urllib.parse import urlparse
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 
-from token_metadata import ROOT, collection_document, render_waves_page, token_document
+from token_metadata import ROOT, collection_document, token_document
 
 PROOFS = (ROOT / "proofs").resolve()
 CONTENT_TYPES = {
@@ -37,8 +37,11 @@ class MetadataHandler(BaseHTTPRequestHandler):
         if path in ("/collection.json", "/meta/collection.json"):
             self._send(200, "application/json; charset=utf-8", _json(collection_document()))
             return
-        if path in ("/waves", "/waves.html", "/proofs/waves.html"):
-            self._send(200, "text/html; charset=utf-8", render_waves_page().encode("utf-8"))
+        if path in ("/waves", "/waves.html"):
+            self.send_response(302)
+            self.send_header("Location", "/proofs/waves.html")
+            self.send_header("Content-Length", "0")
+            self.end_headers()
             return
 
         token_id = _token_path(path)

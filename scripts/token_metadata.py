@@ -63,8 +63,8 @@ def render_waves_page() -> str:
     h1 {{ font-weight: normal; letter-spacing: 0.02em; }}
     a {{ color: #f0e0a8; }}
     table {{ width: 100%; border-collapse: collapse; margin-top: 1.5rem; }}
-    th, td {{ text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid #3a3428; }}
-    th {{ font-weight: normal; color: #f0e0a8; }}
+    th, td {{ text-align: left; padding: 0.45rem 0.6rem; border-bottom: 1px solid #3a3428; vertical-align: top; }}
+    th {{ font-weight: normal; color: #f0e0a8; white-space: nowrap; }}
   </style>
 </head>
 <body>
@@ -73,8 +73,8 @@ def render_waves_page() -> str:
     <p>Mint is closed. The seven proofs are unapproved, and openWaves has not been sent.</p>
     <p>{CANON}</p>
     <p><a href="index.html">The seven proofs</a></p>
+    <p>Caps after the waves open. Later weeks stay at 777.</p>
     <table>
-      <caption>Caps after the waves open. Later weeks stay at 777.</caption>
       <thead>
         <tr><th scope="col">Week</th><th scope="col">Cap</th><th scope="col">Token ids</th><th scope="col">What that week adds</th></tr>
       </thead>

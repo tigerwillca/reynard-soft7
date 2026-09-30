@@ -27,14 +27,27 @@ META_DIR = ROOT / "proofs" / "meta"
 PAGE_PATH = ROOT / "proofs" / "index.html"
 
 
-def _get(base: str, path: str) -> tuple[int, bytes, str]:
+def _get(base: str, path: str) -> tuple[int, bytes, str, str]:
     request = urllib.request.Request(base + path)
+    opener = urllib.request.build_opener(_NoRedirect)
     try:
-        with urllib.request.urlopen(request, timeout=5) as response:
+        with opener.open(request, timeout=5) as response:
             raw = response.read()
-            return response.status, raw, response.headers.get("Content-Type", "")
+            return (
+                response.status,
+                raw,
+                response.headers.get("Content-Type", ""),
+                response.headers.get("Location", ""),
+            )
     except urllib.error.HTTPError as exc:
-        return exc.code, exc.read(), exc.headers.get("Content-Type", "")
+        return exc.code, exc.read(), exc.headers.get("Content-Type", ""), exc.headers.get("Location", "")
+
+
+class _NoRedirect(urllib.request.HTTPErrorProcessor):
+    def http_response(self, request, response):  # noqa: ARG002
+        return response
+
+    https_response = http_response
 
 
 def check_documents() -> list[str]:
@@ -98,7 +111,7 @@ def check_server() -> list[str]:
     port = httpd.server_address[1]
     base = f"http://127.0.0.1:{port}"
     try:
-        status, raw, content_type = _get(base, "/1.json")
+        status, raw, content_type, _ = _get(base, "/1.json")
         if status != 200 or "application/json" not in content_type:
             errors.append(f"/1.json returned {status} {content_type}")
         else:
@@ -106,7 +119,7 @@ def check_server() -> list[str]:
             if body != token_document(1):
                 errors.append("/1.json body drifted")
 
-        status, raw, _ = _get(base, "/meta/8.json")
+        status, raw, _, _ = _get(base, "/meta/8.json")
         if status != 200:
             errors.append(f"/meta/8.json returned {status}")
         else:
@@ -114,29 +127,33 @@ def check_server() -> list[str]:
             if tuple(body) != SHELL_KEYS or "image" in body or "attributes" in body:
                 errors.append("/meta/8.json is not an unpainted shell")
 
-        status, raw, content_type = _get(base, "/meta/778.json")
+        status, raw, content_type, _ = _get(base, "/meta/778.json")
         if status != 404 or "application/json" not in content_type:
             errors.append(f"/meta/778.json returned {status} {content_type}")
 
-        status, _, _ = _get(base, "/meta/01.json")
+        status, _, _, _ = _get(base, "/meta/01.json")
         if status != 404:
             errors.append(f"/meta/01.json returned {status}")
 
-        status, raw, content_type = _get(base, "/proofs/art/01.png")
+        status, raw, content_type, _ = _get(base, "/proofs/art/01.png")
         if status != 200 or content_type != "image/png" or not raw.startswith(b"\x89PNG\r\n\x1a\n"):
             errors.append(f"proof png returned {status} {content_type}")
 
-        status, raw, content_type = _get(base, "/proofs/../scripts/ci.sh")
+        status, _, _, _ = _get(base, "/proofs/../scripts/ci.sh")
         if status != 404:
             errors.append("metadata server leaked a file outside proofs/")
 
-        status, raw, content_type = _get(base, "/waves")
-        if status != 200 or "text/html" not in content_type or b"Mint is closed" not in raw:
-            errors.append(f"/waves returned {status} {content_type}")
-        if status == 200 and raw != render_waves_page().encode("utf-8"):
-            errors.append("/waves does not match the generator")
+        status, _, _, location = _get(base, "/waves")
+        if status != 302 or location != "/proofs/waves.html":
+            errors.append(f"/waves returned {status} location {location}")
 
-        status, raw, _ = _get(base, "/collection.json")
+        status, raw, content_type, _ = _get(base, "/proofs/waves.html")
+        if status != 200 or "text/html" not in content_type or b"Mint is closed" not in raw:
+            errors.append(f"/proofs/waves.html returned {status} {content_type}")
+        if status == 200 and raw != render_waves_page().encode("utf-8"):
+            errors.append("/proofs/waves.html does not match the generator")
+
+        status, raw, _, _ = _get(base, "/collection.json")
         if status != 200 or json.loads(raw).get("seller_fee_basis_points") != 750:
             errors.append("collection.json royalty drifted")
     finally:

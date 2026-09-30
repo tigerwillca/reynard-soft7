@@ -1,0 +1,11 @@
+{
+  "name": "Reynard Soft7",
+  "install": "bash scripts/ci.sh",
+  "start": "bash scripts/start_metadata_server.sh",
+  "ports": [
+    {
+      "name": "metadata",
+      "port": 8000
+    }
+  ]
+}

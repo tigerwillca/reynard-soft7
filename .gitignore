@@ -1,0 +1,6 @@
+.tools/
+contracts/out/
+cache/
+forge-out/
+__pycache__/
+*.pyc

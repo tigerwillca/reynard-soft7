@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <meta name="theme-color" content="#07050f"/>
 <meta name="description" content="Reynard Soft7 on Robinhood Chain. Seven cards, a mint link, holder staking, and a 1.5% quarterly on-chain dividend."/>
+<link rel="icon" href="images/phoenix-banner-sm.webp" type="image/webp"/>
 <link rel="canonical" href="https://tigerwillca.github.io/"/>
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Reynard Soft7 · Robinhood Chain"/>
@@ -38,16 +39,19 @@ h1{margin:.35rem 0 .5rem;font-size:clamp(1.85rem,8vw,2.6rem);font-weight:700;let
 .mint:focus-visible{outline:3px solid #fff;outline-offset:3px}
 .hint{margin:.65rem 0 0;color:var(--muted);font-size:.9rem}
 .links{display:flex;flex-wrap:wrap;gap:.35rem 1rem;margin:1rem 0 0;padding:0;list-style:none}
-.links a,.share summary{display:inline-flex;min-height:44px;align-items:center}
+.links a,.share summary,.bg-toggle{display:inline-flex;min-height:44px;align-items:center}
+.bg-toggle{margin:0;padding:0;border:0;background:transparent;color:var(--gold);font:inherit}
+.bg-toggle:focus-visible{outline:3px solid #fff;outline-offset:3px}
 .share{position:relative}
 .share summary{list-style:none;color:var(--gold)}
 .share summary::-webkit-details-marker{display:none}
 .share summary:focus-visible{outline:3px solid #fff;outline-offset:3px}
-.share-menu{position:absolute;z-index:5;top:calc(100% + .25rem);left:0;min-width:12rem;max-width:calc(100vw - 1.5rem);padding:.35rem;border:1px solid var(--line);border-radius:12px;background:#100a18;box-shadow:0 12px 32px rgba(0,0,0,.45)}
+.share-pop{position:absolute;z-index:5;top:calc(100% + .25rem);left:0;min-width:12rem;max-width:calc(100vw - 1.5rem);padding:.35rem;border:1px solid var(--line);border-radius:12px;background:#100a18;box-shadow:0 12px 32px rgba(0,0,0,.45)}
 .share-menu a,.share-menu button{display:flex;align-items:center;width:100%;min-height:44px;margin:0;padding:.4rem .75rem;border:0;border-radius:8px;background:transparent;color:var(--gold);font:inherit;text-align:left;text-decoration:none}
 .share-menu [hidden]{display:none}
 .share-menu a:hover,.share-menu a:focus-visible,.share-menu button:hover,.share-menu button:focus-visible{background:rgba(155,109,255,.25);outline:none}
 .share-status{margin:.15rem .75rem .35rem;font-size:.8rem;color:var(--lime)}
+.share-status.is-error{color:#ffb4a8}
 .share-status:empty{display:none}
 h2{margin:0 0 .6rem;font-size:1.15rem;letter-spacing:-.02em}
 section{margin-top:1.75rem}
@@ -58,12 +62,13 @@ section{margin-top:1.75rem}
 .grid figure{margin:0}
 .grid figure:last-child{grid-column:1 / -1;max-width:calc(50% - .3rem);justify-self:center}
 .look{margin:-.2rem 0 .7rem;color:var(--muted);font-size:.9rem}
-#card-view{width:min(92vw,26rem);max-height:calc(100dvh - 1.5rem - env(safe-area-inset-bottom));margin:auto;padding:0;border:1px solid var(--line);border-radius:16px;background:#100a18;color:var(--ink);overflow:auto}
-.card-sheet{position:relative;padding:0 0 .85rem}
+#card-view{width:min(92vw,26rem);max-height:calc(100dvh - 1.5rem - env(safe-area-inset-bottom));margin:auto;padding:0;border:1px solid var(--line);border-radius:16px;background:#100a18;color:var(--ink);overflow:hidden}
+.card-sheet{position:relative;max-height:calc(100dvh - 1.5rem - env(safe-area-inset-bottom));padding:0 0 .85rem;overflow:auto}
 #card-view::backdrop{background:rgba(7,5,15,.84)}
 #card-view img{display:block;width:100%;max-height:min(62vh,640px);aspect-ratio:2/3;object-fit:cover;object-position:center top;border-radius:16px 16px 0 0;background:#120818}
 #card-view h2{margin:.75rem 1rem .65rem;font-size:1.05rem}
-.card-close{position:absolute;top:.55rem;right:.55rem;min-width:44px;min-height:44px;padding:.4rem .7rem;border:1px solid var(--line);border-radius:999px;background:rgba(7,5,15,.82);color:var(--gold);font:600 .85rem/1 system-ui,-apple-system,Segoe UI,sans-serif}
+.card-close{position:absolute;top:.55rem;right:.55rem;z-index:2;min-width:44px;min-height:44px;padding:.4rem .7rem;border:1px solid var(--line);border-radius:999px;background:rgba(7,5,15,.82);color:var(--gold);font:600 .85rem/1 system-ui,-apple-system,Segoe UI,sans-serif}
+html.card-open,html.card-open body{overflow:hidden}
 .card-close:focus-visible{outline:3px solid #fff;outline-offset:3px}
 .card-nav{display:flex;gap:.5rem;align-items:center;margin:0 1rem}
 .card-nav button,.card-nav a{display:flex;align-items:center;justify-content:center;min-height:44px;padding:.4rem .75rem;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--gold);font:inherit;text-decoration:none}
@@ -92,6 +97,15 @@ body{padding-bottom:2rem}
 <source src="soft7-bg-loop.webm" type="video/webm"/>
 <source src="soft7-bg-loop.mp4" type="video/mp4"/>
 </video>
+<script>
+(function () {
+  var video = document.querySelector("video.bg");
+  if (video && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    video.autoplay = false;
+    video.pause();
+  }
+})();
+</script>
 <div class="veil" aria-hidden="true"></div>
 <div class="wrap">
 <header>
@@ -107,12 +121,15 @@ body{padding-bottom:2rem}
 <li><a href="#dividend">Dividend</a></li>
 <li><a href="https://robinhoodchain.blockscout.com/address/0x73D7b2611509C14078e16f572bE5aC7D91879DC2">Contract</a></li>
 <li><a href="https://x.com/tigerwillca">@tigerwillca</a></li>
+<li><button type="button" class="bg-toggle" id="bg-toggle">Pause video</button></li>
 <li><details class="share">
 <summary aria-haspopup="menu">Share</summary>
+<div class="share-pop">
 <div class="share-menu" role="menu">
 <button type="button" role="menuitem" id="share-native" hidden>Share…</button>
 <a role="menuitem" id="share-x" href="https://x.com/intent/tweet?text=Reynard+Soft7+on+Robinhood+Chain.+Seven+cards.+Holders+stake+by+holding+and+receive+a+1.5%25+quarterly+on-chain+dividend.&amp;url=https%3A%2F%2Ftigerwillca.github.io%2F" target="_blank" rel="noopener noreferrer">Post on X</a>
 <button type="button" role="menuitem" id="share-copy">Copy link</button>
+</div>
 <p class="share-status" id="share-status" role="status" aria-live="polite"></p>
 </div>
 </details></li>
@@ -157,26 +174,76 @@ body{padding-bottom:2rem}
 </div>
 <dialog id="card-view" aria-labelledby="card-view-title">
 <div class="card-sheet">
-<button type="button" class="card-close" id="card-close">Close</button>
 <img id="card-view-img" alt="" width="480" height="720"/>
-<h2 id="card-view-title"></h2>
+<h2 id="card-view-title" aria-live="polite"></h2>
 <div class="card-nav">
 <button type="button" id="card-prev">Previous</button>
 <a id="card-opensea" href="https://opensea.io/collection/reynard-soft7" target="_blank" rel="noopener noreferrer">OpenSea</a>
 <button type="button" id="card-next">Next</button>
 </div>
 </div>
+<button type="button" class="card-close" id="card-close">Close</button>
 </dialog>
 <script>
 (function () {
   var video = document.querySelector("video.bg");
-  if (!video) return;
-  var kick = function () {
+  var toggle = document.getElementById("bg-toggle");
+  if (!video) {
+    if (toggle) toggle.hidden = true;
+    return;
+  }
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var userPaused = reduce.matches;
+
+  function wantsStill() {
+    return reduce.matches;
+  }
+
+  function label() {
+    if (!toggle) return;
+    toggle.textContent = video.paused ? "Play video" : "Pause video";
+  }
+
+  function kick() {
+    if (userPaused || wantsStill()) {
+      video.pause();
+      if (wantsStill()) video.autoplay = false;
+      label();
+      return;
+    }
+    if (toggle) toggle.textContent = "Pause video";
     var pending = video.play();
-    if (pending && pending.catch) pending.catch(function () {});
-  };
+    if (pending && pending.catch) pending.catch(function () { label(); });
+  }
+
   kick();
-  video.addEventListener("canplay", kick);
+  video.addEventListener("canplay", function () {
+    if (!userPaused && !wantsStill() && video.paused) kick();
+  });
+  video.addEventListener("play", label);
+  video.addEventListener("pause", label);
+  if (reduce.addEventListener) {
+    reduce.addEventListener("change", function () {
+      if (wantsStill()) {
+        video.pause();
+        video.autoplay = false;
+      }
+      label();
+    });
+  }
+  if (toggle) {
+    toggle.addEventListener("click", function () {
+      if (video.paused) {
+        userPaused = false;
+        var pending = video.play();
+        if (pending && pending.catch) pending.catch(function () { label(); });
+      } else {
+        userPaused = true;
+        video.pause();
+      }
+      label();
+    });
+  }
 })();
 (function () {
   var root = document.querySelector(".share");
@@ -190,8 +257,10 @@ body{padding-bottom:2rem}
   var copyBtn = document.getElementById("share-copy");
   var status = document.getElementById("share-status");
 
-  function setStatus(message) {
-    if (status) status.textContent = message;
+  function setStatus(message, isError) {
+    if (!status) return;
+    status.textContent = message || "";
+    status.classList.toggle("is-error", !!isError && !!message);
   }
 
   function fallbackCopy(value) {
@@ -221,7 +290,7 @@ body{padding-bottom:2rem}
         setStatus("Shared");
       }).catch(function (err) {
         if (!err || err.name === "AbortError") return;
-        setStatus("Share did not open. Copy the link instead.");
+        setStatus("Share did not open. Copy the link instead.", true);
       });
     });
   }
@@ -229,7 +298,7 @@ body{padding-bottom:2rem}
   if (copyBtn) {
     copyBtn.addEventListener("click", function () {
       var done = function () { setStatus("Link copied"); };
-      var fail = function () { setStatus(url); };
+      var fail = function () { setStatus("Could not copy the link", true); };
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(url).then(done).catch(function () {
           fallbackCopy(url) ? done() : fail();
@@ -243,43 +312,102 @@ body{padding-bottom:2rem}
   }
 
   function place() {
-    var menu = root.querySelector(".share-menu");
+    var menu = root.querySelector(".share-pop");
     var summary = root.querySelector("summary");
-    if (!menu || !summary) return;
-    menu.style.top = "";
-    menu.style.bottom = "";
-    menu.style.left = "";
-    menu.style.right = "";
-    if (!root.open) return;
-    var limit = window.innerHeight - 8;
+    if (!menu || !summary || !root.open) return;
+    var margin = 8;
+    var height = menu.offsetHeight;
+    var width = menu.offsetWidth;
+    var summaryBox = summary.getBoundingClientRect();
+    var limit = window.innerHeight - margin;
     var dock = document.querySelector(".dock");
     if (dock && getComputedStyle(dock).display !== "none") {
-      limit = Math.min(limit, dock.getBoundingClientRect().top - 8);
+      limit = Math.min(limit, dock.getBoundingClientRect().top - margin);
     }
-    var rect = menu.getBoundingClientRect();
-    if (rect.bottom > limit) {
-      menu.style.top = "auto";
-      menu.style.bottom = "calc(100% + .25rem)";
-      rect = menu.getBoundingClientRect();
-      if (rect.top < 8) {
-        menu.style.top = "";
-        menu.style.bottom = "";
+    var cards = document.getElementById("the-seven");
+    var cardsBox = cards ? cards.getBoundingClientRect() : null;
+    var cardsTop = cardsBox ? cardsBox.top : limit + margin;
+    var mint = document.querySelector("header .mint");
+    var mintBox = mint ? mint.getBoundingClientRect() : null;
+
+    function blocked(top, left) {
+      var rect = { top: top, bottom: top + height, left: left, right: left + width };
+      if (rect.top < margin || rect.bottom > limit + 1) return true;
+      if (rect.left < margin || rect.right > window.innerWidth - margin) return true;
+      if (cardsBox && rect.bottom > cardsBox.top + 1 && rect.top < cardsBox.bottom) return true;
+      if (
+        mintBox && rect.top < mintBox.bottom - 1 && rect.bottom > mintBox.top + 1
+        && rect.left < mintBox.right && rect.right > mintBox.left
+      ) return true;
+      return false;
+    }
+
+    function clampLeft(left) {
+      if (left + width > window.innerWidth - margin) left = window.innerWidth - margin - width;
+      if (left < margin) left = margin;
+      return left;
+    }
+
+    var underMint = mintBox ? mintBox.bottom + margin : margin;
+    var candidates = [
+      { top: summaryBox.top - 4 - height, left: summaryBox.left },
+      { top: summaryBox.bottom + 4, left: summaryBox.left },
+      { top: underMint, left: summaryBox.right + margin },
+      { top: underMint, left: summaryBox.left - margin - width }
+    ];
+    var ceiling = mintBox ? Math.max(margin, mintBox.bottom + margin) : margin;
+    var floor = Math.min(limit, cardsTop - margin);
+    if (floor - ceiling >= height) candidates.push({ top: floor - height, left: summaryBox.left });
+    candidates.push({ top: Math.max(margin, limit - height), left: summaryBox.left });
+
+    var chosen = null;
+    for (var i = 0; i < candidates.length; i++) {
+      var left = clampLeft(candidates[i].left);
+      var top = candidates[i].top;
+      if (!blocked(top, left)) {
+        chosen = { top: top, left: left };
+        break;
       }
     }
-    rect = menu.getBoundingClientRect();
-    if (rect.right > window.innerWidth - 8) {
-      menu.style.left = "auto";
-      menu.style.right = "0";
+    if (!chosen) {
+      chosen = {
+        top: Math.max(margin, Math.min(candidates[candidates.length - 1].top, limit - height)),
+        left: clampLeft(summaryBox.left)
+      };
     }
-    rect = menu.getBoundingClientRect();
-    if (rect.left < 8) {
-      menu.style.left = "0";
-      menu.style.right = "auto";
-    }
+
+    menu.style.position = "fixed";
+    menu.style.top = Math.round(chosen.top) + "px";
+    menu.style.left = Math.round(chosen.left) + "px";
+    menu.style.bottom = "auto";
+    menu.style.right = "auto";
+  }
+
+  function menuItems() {
+    return Array.prototype.filter.call(root.querySelectorAll("[role='menuitem']"), function (item) {
+      return !item.hidden;
+    });
   }
 
   root.addEventListener("toggle", function () {
-    requestAnimationFrame(place);
+    var menu = root.querySelector(".share-pop");
+    if (!root.open) {
+      setStatus("");
+      if (menu) {
+        menu.style.position = "";
+        menu.style.top = "";
+        menu.style.left = "";
+        menu.style.bottom = "";
+        menu.style.right = "";
+        menu.style.visibility = "";
+      }
+      return;
+    }
+    if (menu) menu.style.visibility = "hidden";
+    requestAnimationFrame(function () {
+      place();
+      if (menu) menu.style.visibility = "";
+    });
   });
   window.addEventListener("resize", place);
 
@@ -288,11 +416,24 @@ body{padding-bottom:2rem}
   });
 
   document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && root.open) {
+    if (!root.open) return;
+    if (event.key === "Escape") {
+      event.preventDefault();
       root.open = false;
       var summary = root.querySelector("summary");
       if (summary) summary.focus();
+      return;
     }
+    if (event.key !== "ArrowDown" && event.key !== "ArrowUp" && event.key !== "Home" && event.key !== "End") return;
+    var items = menuItems();
+    if (!items.length) return;
+    event.preventDefault();
+    var current = items.indexOf(document.activeElement);
+    var nextIndex = 0;
+    if (event.key === "ArrowDown") nextIndex = current < 0 ? 0 : (current + 1) % items.length;
+    else if (event.key === "ArrowUp") nextIndex = current < 0 ? items.length - 1 : (current - 1 + items.length) % items.length;
+    else if (event.key === "End") nextIndex = items.length - 1;
+    items[nextIndex].focus();
   });
 })();
 (function () {
@@ -325,10 +466,13 @@ body{padding-bottom:2rem}
     opener = from || null;
     show(i);
     if (!view.open) view.showModal();
+    document.documentElement.classList.add("card-open");
   }
 
   links.forEach(function (link, i) {
     link.addEventListener("click", function (event) {
+      if (event.defaultPrevented || event.button !== 0) return;
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
       openAt(i, link);
     });
@@ -343,12 +487,18 @@ body{padding-bottom:2rem}
   });
 
   view.addEventListener("close", function () {
+    document.documentElement.classList.remove("card-open");
     if (opener && opener.focus) opener.focus();
   });
 
   view.addEventListener("touchstart", function (event) {
     if (!event.changedTouches || !event.changedTouches.length) return;
-    touchX = event.changedTouches[0].clientX;
+    var x = event.changedTouches[0].clientX;
+    if (x < 24 || x > window.innerWidth - 24) {
+      touchX = null;
+      return;
+    }
+    touchX = x;
   }, { passive: true });
 
   view.addEventListener("touchend", function (event) {

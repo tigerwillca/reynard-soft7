@@ -57,6 +57,18 @@ section{margin-top:1.75rem}
 .grid figcaption{margin-top:.35rem;font-size:.9rem;color:var(--muted)}
 .grid figure{margin:0}
 .grid figure:last-child{grid-column:1 / -1;max-width:calc(50% - .3rem);justify-self:center}
+.look{margin:-.2rem 0 .7rem;color:var(--muted);font-size:.9rem}
+#card-view{width:min(92vw,26rem);max-height:calc(100dvh - 1.5rem - env(safe-area-inset-bottom));margin:auto;padding:0;border:1px solid var(--line);border-radius:16px;background:#100a18;color:var(--ink);overflow:auto}
+.card-sheet{position:relative;padding:0 0 .85rem}
+#card-view::backdrop{background:rgba(7,5,15,.84)}
+#card-view img{display:block;width:100%;max-height:min(62vh,640px);aspect-ratio:2/3;object-fit:cover;object-position:center top;border-radius:16px 16px 0 0;background:#120818}
+#card-view h2{margin:.75rem 1rem .65rem;font-size:1.05rem}
+.card-close{position:absolute;top:.55rem;right:.55rem;min-width:44px;min-height:44px;padding:.4rem .7rem;border:1px solid var(--line);border-radius:999px;background:rgba(7,5,15,.82);color:var(--gold);font:600 .85rem/1 system-ui,-apple-system,Segoe UI,sans-serif}
+.card-close:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.card-nav{display:flex;gap:.5rem;align-items:center;margin:0 1rem}
+.card-nav button,.card-nav a{display:flex;align-items:center;justify-content:center;min-height:44px;padding:.4rem .75rem;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--gold);font:inherit;text-decoration:none}
+.card-nav a{flex:1;background:var(--lime);color:#141806;font-weight:700;border-color:transparent}
+.card-nav button:focus-visible,.card-nav a:focus-visible{outline:3px solid #fff;outline-offset:3px}
 .panel{border:1px solid var(--line);border-radius:14px;padding:1rem;background:#100a18}
 .panel p{margin:.5rem 0}
 .num{color:var(--lime);font-weight:700}
@@ -108,6 +120,7 @@ body{padding-bottom:2rem}
 </header>
 <section id="the-seven" aria-labelledby="cards-title">
 <h2 id="cards-title">The seven</h2>
+<p class="look">Tap a card to look at it here.</p>
 <div class="grid">
 <figure><a href="https://opensea.io/assets/robinhood/0x73D7b2611509C14078e16f572bE5aC7D91879DC2/1"><img src="images/display/033.webp" width="480" height="720" alt="Reynard Soft7 #1, a fox in a purple robe and gold mask" loading="lazy" decoding="async"/><figcaption>#1 · Art 033</figcaption></a></figure>
 <figure><a href="https://opensea.io/assets/robinhood/0x73D7b2611509C14078e16f572bE5aC7D91879DC2/2"><img src="images/display/034.webp" width="480" height="720" alt="Reynard Soft7 #2" loading="lazy" decoding="async"/><figcaption>#2 · Art 034</figcaption></a></figure>
@@ -142,6 +155,18 @@ body{padding-bottom:2rem}
 <span>Supply 7 · collect on OpenSea</span>
 <a class="mint" href="https://opensea.io/collection/reynard-soft7">Mint</a>
 </div>
+<dialog id="card-view" aria-labelledby="card-view-title">
+<div class="card-sheet">
+<button type="button" class="card-close" id="card-close">Close</button>
+<img id="card-view-img" alt="" width="480" height="720"/>
+<h2 id="card-view-title"></h2>
+<div class="card-nav">
+<button type="button" id="card-prev">Previous</button>
+<a id="card-opensea" href="https://opensea.io/collection/reynard-soft7" target="_blank" rel="noopener noreferrer">OpenSea</a>
+<button type="button" id="card-next">Next</button>
+</div>
+</div>
+</dialog>
 <script>
 (function () {
   var video = document.querySelector("video.bg");
@@ -267,6 +292,81 @@ body{padding-bottom:2rem}
       root.open = false;
       var summary = root.querySelector("summary");
       if (summary) summary.focus();
+    }
+  });
+})();
+(function () {
+  var view = document.getElementById("card-view");
+  var links = document.querySelectorAll("#the-seven .grid a");
+  var shot = document.getElementById("card-view-img");
+  var title = document.getElementById("card-view-title");
+  var sea = document.getElementById("card-opensea");
+  var closeBtn = document.getElementById("card-close");
+  var prev = document.getElementById("card-prev");
+  var next = document.getElementById("card-next");
+  if (!view || !shot || !title || !sea || !links.length) return;
+  var index = 0;
+  var opener = null;
+  var touchX = null;
+
+  function show(i) {
+    var count = links.length;
+    index = (i + count) % count;
+    var link = links[index];
+    var img = link.querySelector("img");
+    var cap = link.querySelector("figcaption");
+    shot.src = img ? img.currentSrc || img.src : "";
+    shot.alt = img ? img.alt : "";
+    title.textContent = cap ? cap.textContent : "";
+    sea.href = link.href;
+  }
+
+  function openAt(i, from) {
+    opener = from || null;
+    show(i);
+    if (!view.open) view.showModal();
+  }
+
+  links.forEach(function (link, i) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      openAt(i, link);
+    });
+  });
+
+  if (prev) prev.addEventListener("click", function () { show(index - 1); });
+  if (next) next.addEventListener("click", function () { show(index + 1); });
+  if (closeBtn) closeBtn.addEventListener("click", function () { view.close(); });
+
+  view.addEventListener("click", function (event) {
+    if (event.target === view) view.close();
+  });
+
+  view.addEventListener("close", function () {
+    if (opener && opener.focus) opener.focus();
+  });
+
+  view.addEventListener("touchstart", function (event) {
+    if (!event.changedTouches || !event.changedTouches.length) return;
+    touchX = event.changedTouches[0].clientX;
+  }, { passive: true });
+
+  view.addEventListener("touchend", function (event) {
+    if (touchX == null || !event.changedTouches || !event.changedTouches.length) return;
+    var dx = event.changedTouches[0].clientX - touchX;
+    touchX = null;
+    if (Math.abs(dx) < 48) return;
+    show(dx < 0 ? index + 1 : index - 1);
+  }, { passive: true });
+
+  document.addEventListener("keydown", function (event) {
+    if (!view.open) return;
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      show(index - 1);
+    } else if (event.key === "ArrowRight") {
+      event.preventDefault();
+      show(index + 1);
     }
   });
 })();

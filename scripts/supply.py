@@ -165,6 +165,7 @@ def render_page() -> str:
     body {{ margin: 0; font: 18px/1.45 Georgia, serif; background: #14120e; color: #f3efe4; }}
     main {{ max-width: 920px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }}
     h1 {{ font-weight: normal; letter-spacing: 0.02em; }}
+    a {{ color: #f0e0a8; }}
     .banner {{ width: 100%; height: auto; display: block; }}
     .grid {{ display: grid; gap: 2.5rem; }}
     article img {{ width: min(100%, 420px); height: auto; background: #000; }}
@@ -176,6 +177,7 @@ def render_page() -> str:
   <main>
     <h1>Reynard Soft7 proofs</h1>
     <p>Seven paintings for the first wave. Supply is 777. Mint is closed until these proofs are approved.</p>
+    <p><a href="waves.html">Wave schedule</a>. Week 0 is tokens 1–7. Each later week adds 77, and week 10 is tokens 701–777.</p>
     <p>{CANON}</p>
     <img class="banner" src="art/banner.png" alt="Purple-lime banner with Reynard and the seventh-gate potion orb">
     <p>The banner proof clips the fox at the shins.</p>

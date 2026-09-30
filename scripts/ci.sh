@@ -8,6 +8,7 @@ cd "$ROOT"
 python3 scripts/check_waves.py
 python3 scripts/check_contract.py
 python3 scripts/supply.py --check
+python3 scripts/check_metadata.py
 python3 - << 'PY'
 import pathlib, sys
 sys.path.insert(0, "scripts")

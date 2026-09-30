@@ -16,9 +16,15 @@ The live collection of 7 is a different contract, `0x73D7b2611509C14078e16f572bE
 bash scripts/ci.sh
 ```
 
-That checks the wave cap, the stake dividend, the supply map, the proof PNG checksums, compiles `contracts/Soft7MascotCards.sol` with solc 0.8.24, and runs that bytecode. The run covers a closed mint, the week-10 cap of 777, the 10% stake pull, and a transfer that clears stake. Nothing is deployed.
+That checks the wave cap, the stake dividend, the supply map, the proof PNG checksums, the metadata server, compiles `contracts/Soft7MascotCards.sol` with solc 0.8.24, and runs that bytecode. The run covers a closed mint, the week-10 cap of 777, the 10% stake pull, and a transfer that clears stake. Nothing is deployed.
 
-Open `proofs/index.html` to see the seven proofs and the banner.
+Open `proofs/index.html` to see the seven proofs and the banner. Open `proofs/waves.html` for the week-by-week cap. Mint stays closed on that page.
+
+```bash
+bash scripts/start_metadata_server.sh
+```
+
+That serves token JSON on port 8000. `GET /1.json` is the shape `tokenURI` uses when the base ends in `/`. Tokens 1–7 are the proof files. Tokens 8–777 are shells: a name, the canon description, and `external_url`. They have no image and no traits. The server does not deploy or mint.
 
 ## Layout
 
@@ -28,4 +34,6 @@ Open `proofs/index.html` to see the seven proofs and the banner.
 | `supply/catalog.json` | Token 1–777. Proofs, then unpainted slots. |
 | `proofs/art/` | Seven card PNGs and the banner, with SHA-256 sums. |
 | `proofs/meta/` | Metadata for the seven proofs. |
+| `proofs/waves.html` | Week caps from 7 to 777. Mint stays closed. |
+| `scripts/metadata_server.py` | Serves `/1.json` through `/777.json` and the proof PNGs. |
 | `scripts/encode_set_base_uri.py` | Prints calldata for the live supply-7 contract. It does not send it. |

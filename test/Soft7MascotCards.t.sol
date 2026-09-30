@@ -253,6 +253,157 @@ contract Soft7MascotCardsTest {
         (address receiver, uint256 royalty) = cards.royaltyInfo(tokenId, 10_000);
         if (receiver != cards.PAYOUT()) revert("receiver");
         if (royalty != 750) revert("royalty");
+        if (!cards.supportsInterface(0x01ffc9a7)) revert("165");
+        if (!cards.supportsInterface(0x80ac58cd)) revert("721");
+        if (!cards.supportsInterface(0x5b5e139f)) revert("meta");
+        if (!cards.supportsInterface(0x2a55205a)) revert("2981");
+        if (!cards.supportsInterface(0x49064906)) revert("4906");
+        if (cards.supportsInterface(0xffffffff)) revert("unknown");
+    }
+
+    function test_twoStakedCardsInOneWalletTakeTwoShares() public {
+        _open();
+        uint256 first = _mint(holder);
+        vm.prank(holder);
+        cards.stake(first);
+        uint256 second = _mint(holder);
+        vm.prank(holder);
+        cards.stake(second);
+        vm.prank(holder);
+        cards.pull();
+
+        uint256 theirs = _mint(other);
+        vm.prank(other);
+        cards.stake(theirs);
+        if (cards.stakedCount(other) != 1) revert("other weight");
+        vm.prank(holder);
+        cards.pull();
+
+        _mint(third);
+        uint256 dividend = PRICE / 10;
+        uint256 acc = (dividend * 1e18) / 3;
+        if (cards.pending(holder) != (2 * acc) / 1e18) revert("two shares");
+        if (cards.pending(other) != acc / 1e18) revert("one share");
+        if (cards.stakedCount(holder) != 2) revert("weight");
+
+        vm.prank(holder);
+        cards.pull();
+        vm.prank(other);
+        cards.pull();
+        vm.prank(holder);
+        cards.unstake(first);
+        if (cards.stakedCount(holder) != 1) revert("one left");
+        if (cards.stakedBy(first) != address(0)) revert("cleared");
+        if (cards.stakedBy(second) != holder) revert("kept second");
+
+        _mint(vm.addr(4));
+        uint256 even = ((dividend * 1e18) / 2) / 1e18;
+        if (cards.pending(holder) != even) revert("even holder");
+        if (cards.pending(other) != even) revert("even other");
+    }
+
+    function test_stakeAndUnstakeRejectTheWrongCaller() public {
+        _open();
+        uint256 tokenId = _mint(holder);
+        vm.prank(other);
+        vm.expectRevert(Soft7MascotCards.NotTokenOwner.selector);
+        cards.stake(tokenId);
+
+        vm.prank(holder);
+        vm.expectRevert(Soft7MascotCards.NotStaked.selector);
+        cards.unstake(tokenId);
+
+        vm.prank(holder);
+        cards.stake(tokenId);
+        vm.prank(holder);
+        vm.expectRevert(Soft7MascotCards.AlreadyStaked.selector);
+        cards.stake(tokenId);
+
+        vm.prank(other);
+        vm.expectRevert(Soft7MascotCards.NotStaked.selector);
+        cards.unstake(tokenId);
+    }
+
+    function test_operatorTransferClearsStakeAndKeepsTheCut() public {
+        _open();
+        uint256 tokenId = _mint(holder);
+        vm.prank(holder);
+        cards.stake(tokenId);
+        _mint(other);
+        if (cards.pending(holder) != PRICE / 10) revert("owed");
+
+        vm.prank(holder);
+        cards.setApprovalForAll(other, true);
+        vm.prank(other);
+        cards.transferFrom(holder, third, tokenId);
+
+        if (cards.ownerOf(tokenId) != third) revert("owner");
+        if (cards.stakedBy(tokenId) != address(0)) revert("staked");
+        if (cards.stakedCount(holder) != 0) revert("count");
+        if (cards.pending(holder) != PRICE / 10) revert("kept");
+        if (cards.pending(third) != 0) revert("receiver");
+    }
+
+    function test_safeTransferToARejectingVaultDoesNotMoveTheCard() public {
+        _open();
+        uint256 tokenId = _mint(holder);
+        vm.prank(holder);
+        cards.stake(tokenId);
+        UnsafeVault vault = new UnsafeVault();
+        vm.prank(holder);
+        vm.expectRevert(Soft7MascotCards.UnsafeReceiver.selector);
+        cards.safeTransferFrom(holder, address(vault), tokenId);
+        if (cards.ownerOf(tokenId) != holder) revert("moved");
+        if (cards.stakedBy(tokenId) != holder) revert("unstaked");
+        if (cards.balanceOf(holder) != 1) revert("balance");
+    }
+
+    function test_pullToAContractThatRejectsEtherLeavesTheCut() public {
+        _open();
+        EtherRejecter sink = new EtherRejecter();
+        vm.deal(address(sink), PRICE);
+        uint256 tokenId = sink.mint(cards, PRICE);
+        sink.stake(cards, tokenId);
+        _mint(holder);
+        if (cards.pending(address(sink)) != PRICE / 10) revert("owed");
+
+        vm.expectRevert(Soft7MascotCards.PayFailed.selector);
+        sink.pull(cards);
+        if (cards.pending(address(sink)) != PRICE / 10) revert("lost");
+        if (address(sink).balance != 0) revert("paid");
+    }
+
+    function test_nineWeiMintPaysTheStakerNothing() public {
+        _open();
+        uint256 tokenId = _mint(holder);
+        vm.prank(holder);
+        cards.stake(tokenId);
+        vm.prank(holder);
+        cards.pull();
+
+        cards.setMintPrice(9);
+        address payout = cards.PAYOUT();
+        uint256 before = payout.balance;
+        vm.deal(other, 9);
+        vm.prank(other);
+        cards.mint{value: 9}();
+        if (payout.balance - before != 9) revert("all nine");
+        if (cards.pending(holder) != 0) revert("dust dividend");
+        if (address(cards).balance != 0) revert("kept");
+    }
+
+    function test_ownerCanHandOffThePriceAndTheRole() public {
+        vm.expectRevert(Soft7MascotCards.ZeroAddress.selector);
+        cards.transferOwnership(address(0));
+
+        cards.transferOwnership(holder);
+        vm.expectRevert(Soft7MascotCards.NotOwner.selector);
+        cards.setMintPrice(1 ether);
+
+        vm.prank(holder);
+        cards.setMintPrice(1 ether);
+        if (cards.mintPrice() != 1 ether) revert("price");
+        if (cards.owner() != holder) revert("owner");
     }
 
     function _open() internal {
@@ -269,5 +420,27 @@ contract Soft7MascotCardsTest {
         _pay(account);
         vm.prank(account);
         tokenId = cards.mint{value: PRICE}();
+    }
+}
+
+/// @notice Accepts a card only by returning the wrong selector, and accepts no ether.
+contract UnsafeVault {
+    function onERC721Received(address, address, uint256, bytes calldata) external pure returns (bytes4) {
+        return bytes4(0);
+    }
+}
+
+/// @notice Mints and stakes, then refuses the dividend pull.
+contract EtherRejecter {
+    function mint(Soft7MascotCards cards, uint256 price) external returns (uint256 tokenId) {
+        tokenId = cards.mint{value: price}();
+    }
+
+    function stake(Soft7MascotCards cards, uint256 tokenId) external {
+        cards.stake(tokenId);
+    }
+
+    function pull(Soft7MascotCards cards) external {
+        cards.pull();
     }
 }

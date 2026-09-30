@@ -16,7 +16,7 @@ The live collection of 7 is a different contract, `0x73D7b2611509C14078e16f572bE
 bash scripts/ci.sh
 ```
 
-That checks the wave cap, the stake dividend, the supply map, the proof PNG checksums, compiles `contracts/Soft7MascotCards.sol` with solc 0.8.24, and runs that bytecode. The run covers a closed mint, the week-10 cap of 777, the 10% stake pull, and a transfer that clears stake. Nothing is deployed.
+That checks the wave cap, the stake dividend, the supply map, the proof PNG checksums, compiles `contracts/Soft7MascotCards.sol` with solc 0.8.24, and runs that bytecode. The run covers a closed mint, the week-10 cap of 777, the 10% stake pull, two staked cards counting as two shares, and a transfer that clears stake. A pull that the holder rejects leaves the cut in the contract. Nothing is deployed.
 
 Open `proofs/index.html` to see the seven proofs and the banner.
 

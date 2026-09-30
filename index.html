@@ -48,6 +48,7 @@ h1{margin:.35rem 0 .5rem;font-size:clamp(1.85rem,8vw,2.6rem);font-weight:700;let
 .share-menu [hidden]{display:none}
 .share-menu a:hover,.share-menu a:focus-visible,.share-menu button:hover,.share-menu button:focus-visible{background:rgba(155,109,255,.25);outline:none}
 .share-status{margin:.15rem .75rem .35rem;font-size:.8rem;color:var(--lime)}
+.share-status.is-error{color:#ffb4a8}
 .share-status:empty{display:none}
 h2{margin:0 0 .6rem;font-size:1.15rem;letter-spacing:-.02em}
 section{margin-top:1.75rem}
@@ -165,8 +166,11 @@ body{padding-bottom:2rem}
   var copyBtn = document.getElementById("share-copy");
   var status = document.getElementById("share-status");
 
-  function setStatus(message) {
-    if (status) status.textContent = message;
+  function setStatus(message, isError) {
+    if (!status) return;
+    status.textContent = message || "";
+    status.classList.toggle("is-error", !!isError && !!message);
+    place();
   }
 
   function fallbackCopy(value) {
@@ -204,7 +208,7 @@ body{padding-bottom:2rem}
   if (copyBtn) {
     copyBtn.addEventListener("click", function () {
       var done = function () { setStatus("Link copied"); };
-      var fail = function () { setStatus(url); };
+      var fail = function () { setStatus("Could not copy the link", true); };
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(url).then(done).catch(function () {
           fallbackCopy(url) ? done() : fail();
@@ -219,27 +223,38 @@ body{padding-bottom:2rem}
 
   function place() {
     var menu = root.querySelector(".share-menu");
-    var summary = root.querySelector("summary");
-    if (!menu || !summary) return;
+    if (!menu) return;
     menu.style.top = "";
     menu.style.bottom = "";
     menu.style.left = "";
     menu.style.right = "";
     if (!root.open) return;
-    var limit = window.innerHeight - 8;
+    var parentTop = root.getBoundingClientRect().top;
+    var rect = menu.getBoundingClientRect();
+    var height = rect.height;
+    var hardFloor = window.innerHeight - 8;
     var dock = document.querySelector(".dock");
     if (dock && getComputedStyle(dock).display !== "none") {
-      limit = Math.min(limit, dock.getBoundingClientRect().top - 8);
+      hardFloor = Math.min(hardFloor, dock.getBoundingClientRect().top - 8);
     }
-    var rect = menu.getBoundingClientRect();
-    if (rect.bottom > limit) {
-      menu.style.top = "auto";
-      menu.style.bottom = "calc(100% + .25rem)";
-      rect = menu.getBoundingClientRect();
-      if (rect.top < 8) {
-        menu.style.top = "";
-        menu.style.bottom = "";
-      }
+    var images = document.querySelectorAll(".grid img");
+    for (var i = 0; i < images.length; i++) {
+      hardFloor = Math.min(hardFloor, images[i].getBoundingClientRect().top - 8);
+    }
+    var softFloor = hardFloor;
+    var heading = document.querySelector("#the-seven h2");
+    if (heading) softFloor = Math.min(softFloor, heading.getBoundingClientRect().top - 8);
+    var mint = document.querySelector("header .mint");
+    var ceiling = 8;
+    if (mint) ceiling = Math.max(ceiling, mint.getBoundingClientRect().bottom + 8);
+    var top = rect.top;
+    if (top + height > softFloor) top = softFloor - height;
+    if (top < ceiling) top = ceiling;
+    if (top + height > hardFloor) top = hardFloor - height;
+    if (top < 8) top = 8;
+    if (Math.abs(top - rect.top) > 0.5) {
+      menu.style.top = (top - parentTop) + "px";
+      menu.style.bottom = "auto";
     }
     rect = menu.getBoundingClientRect();
     if (rect.right > window.innerWidth - 8) {
@@ -254,6 +269,7 @@ body{padding-bottom:2rem}
   }
 
   root.addEventListener("toggle", function () {
+    if (!root.open) setStatus("");
     requestAnimationFrame(place);
   });
   window.addEventListener("resize", place);

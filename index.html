@@ -48,6 +48,7 @@ h1{margin:.35rem 0 .5rem;font-size:clamp(1.85rem,8vw,2.6rem);font-weight:700;let
 .share-menu [hidden]{display:none}
 .share-menu a:hover,.share-menu a:focus-visible,.share-menu button:hover,.share-menu button:focus-visible{background:rgba(155,109,255,.25);outline:none}
 .share-status{margin:.15rem .75rem .35rem;font-size:.8rem;color:var(--lime)}
+.share-status.is-error{color:#ffb4a8}
 .share-status:empty{display:none}
 h2{margin:0 0 .6rem;font-size:1.15rem;letter-spacing:-.02em}
 section{margin-top:1.75rem}
@@ -165,8 +166,10 @@ body{padding-bottom:2rem}
   var copyBtn = document.getElementById("share-copy");
   var status = document.getElementById("share-status");
 
-  function setStatus(message) {
-    if (status) status.textContent = message;
+  function setStatus(message, isError) {
+    if (!status) return;
+    status.textContent = message || "";
+    status.classList.toggle("is-error", !!isError && !!message);
   }
 
   function fallbackCopy(value) {
@@ -204,7 +207,7 @@ body{padding-bottom:2rem}
   if (copyBtn) {
     copyBtn.addEventListener("click", function () {
       var done = function () { setStatus("Link copied"); };
-      var fail = function () { setStatus(url); };
+      var fail = function () { setStatus("Could not copy the link", true); };
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(url).then(done).catch(function () {
           fallbackCopy(url) ? done() : fail();
@@ -231,6 +234,10 @@ body{padding-bottom:2rem}
     if (dock && getComputedStyle(dock).display !== "none") {
       limit = Math.min(limit, dock.getBoundingClientRect().top - 8);
     }
+    var cards = document.getElementById("the-seven");
+    if (cards) {
+      limit = Math.min(limit, cards.getBoundingClientRect().top - 8);
+    }
     var rect = menu.getBoundingClientRect();
     if (rect.bottom > limit) {
       menu.style.top = "auto";
@@ -254,6 +261,7 @@ body{padding-bottom:2rem}
   }
 
   root.addEventListener("toggle", function () {
+    if (!root.open) setStatus("");
     requestAnimationFrame(place);
   });
   window.addEventListener("resize", place);

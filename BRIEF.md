@@ -4,7 +4,7 @@ This repository is the 777-card build. The seven proof paintings in `proofs/art/
 
 The live drop is a different contract: `0x73D7b2611509C14078e16f572bE5aC7D91879DC2` on Robinhood Chain, chain ID 4663, `MAX_SUPPLY` 7. This build does not deploy, mint, or call that contract.
 
-Mint stays closed until the seven proofs are approved.
+The seven proofs were accepted on 2026-09-30. Mint stays closed.
 
 ## What the cards are
 
@@ -50,7 +50,7 @@ Integer division can leave dust in the stake accumulator. That dust is not pulle
 
 Compile the proof contract with solc 0.8.24, optimizer on, 200 runs, EVM `cancun`, metadata bytecode hash, viaIR off. `scripts/compile_proof.sh` writes `contracts/compiler-input.json`.
 
-The proof contract starts with proofs unapproved and waves closed. `approveProofs()` then `openWaves()` are owner calls for after this set is accepted. They have not been sent. No deploy. No mint.
+The proof contract starts with proofs unapproved and waves closed. The seven paintings were accepted on 2026-09-30. `approveProofs()` then `openWaves()` are the owner calls that follow that acceptance. They have not been sent. No deploy. No mint.
 
 ## What not to do from this repository
 

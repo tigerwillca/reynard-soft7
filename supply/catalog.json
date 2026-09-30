@@ -6,6 +6,8 @@
   "firstWave": 7,
   "weeklyWave": 77,
   "mint": "closed",
+  "proofs": "approved",
+  "accepted": "2026-09-30",
   "payout": "0xe53bdb2118585d5B2cD06a117d3A036AFA70677a",
   "royaltyBps": 750,
   "tokens": [

@@ -106,6 +106,8 @@ def catalog() -> dict[str, object]:
         "firstWave": 7,
         "weeklyWave": 77,
         "mint": "closed",
+        "proofs": "approved",
+        "accepted": "2026-09-30",
         "payout": PAYOUT,
         "royaltyBps": 750,
         "tokens": tokens,
@@ -175,7 +177,7 @@ def render_page() -> str:
 <body>
   <main>
     <h1>Reynard Soft7 proofs</h1>
-    <p>Seven paintings for the first wave. Supply is 777. Mint is closed until these proofs are approved.</p>
+    <p>Seven paintings for the first wave. Supply is 777. These proofs were accepted on 2026-09-30. Mint stays closed.</p>
     <p>{CANON}</p>
     <img class="banner" src="art/banner.png" alt="Purple-lime banner with Reynard and the seventh-gate potion orb">
     <p>The banner proof clips the fox at the shins.</p>
@@ -244,6 +246,10 @@ def check_outputs() -> list[str]:
         errors.append("proofs/index.html does not match the generator")
 
     data = catalog()
+    if data.get("proofs") != "approved" or data.get("accepted") != "2026-09-30":
+        errors.append("the seven proofs must stay accepted on 2026-09-30")
+    if data.get("mint") != "closed":
+        errors.append("mint must stay closed")
     tokens = data["tokens"]
     if not isinstance(tokens, list) or len(tokens) != 777:
         errors.append("catalog must list 777 tokens")
@@ -288,6 +294,8 @@ def check_outputs() -> list[str]:
     if len(colors) != len(set(colors)):
         errors.append("proof colors are not unique")
     page = PAGE_PATH.read_text()
+    if "accepted on 2026-09-30" not in page or "Mint stays closed" not in page:
+        errors.append("proof page must record the acceptance and keep mint closed")
     for name in [f"{i:02d}.png" for i in range(1, 8)] + ["banner.png"]:
         if f"art/{name}" not in page:
             errors.append(f"proof page is missing art/{name}")

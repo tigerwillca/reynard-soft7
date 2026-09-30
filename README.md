@@ -4,7 +4,7 @@ Reynard Soft7 mascot cards. Supply **777** on Robinhood Chain (chain ID **4663**
 
 The first wave is 7 cards. Each week after that adds 77, and week 10 reaches 777. Ten percent of every mint accrues to staked holders. The wallet ending in `77a` receives the rest. Royalty is 7.5%.
 
-Mint is closed. The seven paintings in `proofs/` are the approval set. Tokens 8–777 are unpainted slots in `supply/catalog.json`.
+The seven paintings in `proofs/` were accepted on 2026-09-30. Mint stays closed. `approveProofs()` and `openWaves()` have not been sent. Tokens 8–777 are unpainted slots in `supply/catalog.json`.
 
 The live collection of 7 is a different contract, `0x73D7b2611509C14078e16f572bE5aC7D91879DC2`. Its site is [tigerwillca.github.io](https://tigerwillca.github.io/). This repository does not deploy or mint.
 

@@ -23,8 +23,8 @@
 :root{color-scheme:dark;--bg:#07050f;--ink:#f3eef8;--muted:#c8bdd6;--gold:#f0e0a8;--lime:#ccff00;--line:rgba(155,109,255,.35)}
 *{box-sizing:border-box}
 html,body,body *{cursor:url("cursor.png") 1 1, auto}
-html{background:#07050f}
-body{margin:0;font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;background:transparent;color:var(--ink);padding-bottom:calc(5.25rem + env(safe-area-inset-bottom))}
+html{background:#07050f;overflow-x:hidden}
+body{margin:0;overflow-x:hidden;font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;background:transparent;color:var(--ink);padding-bottom:calc(5.25rem + env(safe-area-inset-bottom))}
 .bg{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;pointer-events:none}
 .veil{position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(7,5,15,.2),rgba(7,5,15,.55))}
 img{max-width:100%;height:auto}
@@ -43,13 +43,13 @@ h1{margin:.35rem 0 .5rem;font-size:clamp(1.85rem,8vw,2.6rem);font-weight:700;let
 .share summary{list-style:none;color:var(--gold)}
 .share summary::-webkit-details-marker{display:none}
 .share summary:focus-visible{outline:3px solid #fff;outline-offset:3px}
-.share-menu{position:absolute;z-index:5;top:calc(100% + .25rem);left:0;min-width:12rem;max-width:calc(100vw - 1.5rem);padding:.35rem;border:1px solid var(--line);border-radius:12px;background:#100a18;box-shadow:0 12px 32px rgba(0,0,0,.45)}
-.share-menu a,.share-menu button{display:flex;align-items:center;width:100%;min-height:44px;margin:0;padding:.4rem .75rem;border:0;border-radius:8px;background:transparent;color:var(--gold);font:inherit;text-align:left;text-decoration:none}
+.share-menu{position:absolute;z-index:5;top:calc(100% + .25rem);left:0;display:flex;flex-wrap:nowrap;width:max-content;max-width:calc(100vw - 16px);padding:.35rem;border:1px solid var(--line);border-radius:12px;background:#100a18;box-shadow:0 12px 32px rgba(0,0,0,.45)}
+.share-menu a,.share-menu button{display:flex;align-items:center;flex:0 0 auto;width:auto;min-height:44px;margin:0;padding:.4rem .75rem;border:0;border-radius:8px;background:transparent;color:var(--gold);font:inherit;text-align:left;text-decoration:none;white-space:nowrap}
 .share-menu [hidden]{display:none}
 .share-menu a:hover,.share-menu a:focus-visible,.share-menu button:hover,.share-menu button:focus-visible{background:rgba(155,109,255,.25);outline:none}
-.share-status{margin:.15rem .75rem .35rem;font-size:.8rem;color:var(--lime)}
-.share-status.is-error{color:#ffb4a8}
-.share-status:empty{display:none}
+.share-menu button.is-copied{color:var(--lime);white-space:nowrap}
+.share-menu button.is-error{color:#ffb4a8;white-space:nowrap}
+.share-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 h2{margin:0 0 .6rem;font-size:1.15rem;letter-spacing:-.02em}
 section{margin-top:1.75rem}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
@@ -165,11 +165,30 @@ body{padding-bottom:2rem}
   var nativeBtn = document.getElementById("share-native");
   var copyBtn = document.getElementById("share-copy");
   var status = document.getElementById("share-status");
+  var copyLabel = copyBtn ? copyBtn.textContent : "Copy link";
+  var nativeLabel = nativeBtn ? nativeBtn.textContent : "Share…";
 
-  function setStatus(message, isError) {
-    if (!status) return;
-    status.textContent = message || "";
-    status.classList.toggle("is-error", !!isError && !!message);
+  function showOn(button, label, message, isError) {
+    if (!button) return;
+    var active = !!message;
+    button.textContent = active ? message : label;
+    button.classList.toggle("is-copied", active && !isError);
+    button.classList.toggle("is-error", active && !!isError);
+  }
+
+  function setStatus(message, isError, source) {
+    if (status) {
+      status.textContent = message || "";
+      status.classList.toggle("is-error", !!isError && !!message);
+    }
+    if (!message) {
+      showOn(copyBtn, copyLabel, "", false);
+      showOn(nativeBtn, nativeLabel, "", false);
+    } else if (source === nativeBtn) {
+      showOn(nativeBtn, nativeLabel, message, isError);
+    } else {
+      showOn(copyBtn, copyLabel, message, isError);
+    }
     place();
   }
 
@@ -197,10 +216,10 @@ body{padding-bottom:2rem}
     nativeBtn.hidden = false;
     nativeBtn.addEventListener("click", function () {
       navigator.share(payload).then(function () {
-        setStatus("Shared");
+        setStatus("Shared", false, nativeBtn);
       }).catch(function (err) {
         if (!err || err.name === "AbortError") return;
-        setStatus("Share did not open. Copy the link instead.");
+        setStatus("Share did not open. Copy the link instead.", true, nativeBtn);
       });
     });
   }
@@ -221,6 +240,10 @@ body{padding-bottom:2rem}
     });
   }
 
+  function overlaps(a, b) {
+    return a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top;
+  }
+
   function place() {
     var menu = root.querySelector(".share-menu");
     if (!menu) return;
@@ -228,42 +251,83 @@ body{padding-bottom:2rem}
     menu.style.bottom = "";
     menu.style.left = "";
     menu.style.right = "";
+    menu.style.maxHeight = "";
     if (!root.open) return;
-    var parentTop = root.getBoundingClientRect().top;
+
+    var parent = root.getBoundingClientRect();
+    var summary = root.querySelector("summary").getBoundingClientRect();
     var rect = menu.getBoundingClientRect();
+    var width = rect.width;
     var height = rect.height;
-    var hardFloor = window.innerHeight - 8;
-    var dock = document.querySelector(".dock");
-    if (dock && getComputedStyle(dock).display !== "none") {
-      hardFloor = Math.min(hardFloor, dock.getBoundingClientRect().top - 8);
+    var obstacles = [];
+
+    function add(el, cost) {
+      if (!el || root.contains(el)) return;
+      var box = el.getBoundingClientRect();
+      if (box.width < 1 && box.height < 1) return;
+      obstacles.push({ box: box, cost: cost });
     }
+
+    add(document.querySelector("#the-seven h2"), 100);
     var images = document.querySelectorAll(".grid img");
-    for (var i = 0; i < images.length; i++) {
-      hardFloor = Math.min(hardFloor, images[i].getBoundingClientRect().top - 8);
+    for (var i = 0; i < images.length; i++) add(images[i], 100);
+    add(document.querySelector("header .mint"), 40);
+    add(document.querySelector("h1"), 40);
+    add(document.querySelector(".banner"), 25);
+    add(document.querySelector(".lede"), 20);
+    add(document.querySelector(".eyebrow"), 15);
+    var dock = document.querySelector(".dock");
+    if (dock && getComputedStyle(dock).display !== "none") add(dock, 8);
+    var links = document.querySelectorAll(".links a");
+    for (var j = 0; j < links.length; j++) add(links[j], 50);
+    add(document.querySelector(".hint"), 12);
+
+    function score(left, top) {
+      var box = { left: left, right: left + width, top: top, bottom: top + height };
+      var total = 0;
+      if (box.left < 8) total += 80;
+      if (box.right > window.innerWidth - 8) total += 80;
+      if (box.top < 8) total += 80;
+      if (box.bottom > window.innerHeight - 8) total += 80;
+      for (var n = 0; n < obstacles.length; n++) {
+        if (overlaps(box, obstacles[n].box)) total += obstacles[n].cost;
+      }
+      total += Math.abs(left - summary.left) / 40;
+      total += Math.abs(top - (summary.bottom + 4)) / 40;
+      return total;
     }
-    var softFloor = hardFloor;
-    var heading = document.querySelector("#the-seven h2");
-    if (heading) softFloor = Math.min(softFloor, heading.getBoundingClientRect().top - 8);
-    var mint = document.querySelector("header .mint");
-    var ceiling = 8;
-    if (mint) ceiling = Math.max(ceiling, mint.getBoundingClientRect().bottom + 8);
-    var top = rect.top;
-    if (top + height > softFloor) top = softFloor - height;
-    if (top < ceiling) top = ceiling;
-    if (top + height > hardFloor) top = hardFloor - height;
-    if (top < 8) top = 8;
-    if (Math.abs(top - rect.top) > 0.5) {
-      menu.style.top = (top - parentTop) + "px";
+
+    var maxLeft = Math.max(8, window.innerWidth - 8 - width);
+    function clampLeft(left) {
+      return Math.max(8, Math.min(left, maxLeft));
+    }
+
+    var candidates = [
+      { left: summary.left, top: summary.bottom + 4 },
+      { left: summary.left, top: summary.top - height - 4 },
+      { left: summary.right + 4, top: summary.top },
+      { left: summary.left - width - 4, top: summary.top }
+    ];
+    for (var k = 0; k < obstacles.length; k++) {
+      if (obstacles[k].cost < 40) continue;
+      candidates.push({ left: summary.left, top: obstacles[k].box.top - 8 - height });
+      candidates.push({ left: summary.left, top: obstacles[k].box.bottom + 8 });
+    }
+
+    var best = null;
+    for (var c = 0; c < candidates.length; c++) {
+      var left = clampLeft(candidates[c].left);
+      var top = Math.max(8, candidates[c].top);
+      var next = score(left, top);
+      if (!best || next < best.score) best = { left: left, top: top, score: next };
+    }
+
+    if (Math.abs(best.top - rect.top) > 0.5) {
+      menu.style.top = (best.top - parent.top) + "px";
       menu.style.bottom = "auto";
     }
-    rect = menu.getBoundingClientRect();
-    if (rect.right > window.innerWidth - 8) {
-      menu.style.left = "auto";
-      menu.style.right = "0";
-    }
-    rect = menu.getBoundingClientRect();
-    if (rect.left < 8) {
-      menu.style.left = "0";
+    if (Math.abs(best.left - rect.left) > 0.5) {
+      menu.style.left = (best.left - parent.left) + "px";
       menu.style.right = "auto";
     }
   }

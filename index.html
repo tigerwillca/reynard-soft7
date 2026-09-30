@@ -170,6 +170,7 @@ body{padding-bottom:2rem}
     if (!status) return;
     status.textContent = message || "";
     status.classList.toggle("is-error", !!isError && !!message);
+    place();
   }
 
   function fallbackCopy(value) {
@@ -222,31 +223,38 @@ body{padding-bottom:2rem}
 
   function place() {
     var menu = root.querySelector(".share-menu");
-    var summary = root.querySelector("summary");
-    if (!menu || !summary) return;
+    if (!menu) return;
     menu.style.top = "";
     menu.style.bottom = "";
     menu.style.left = "";
     menu.style.right = "";
     if (!root.open) return;
-    var limit = window.innerHeight - 8;
+    var parentTop = root.getBoundingClientRect().top;
+    var rect = menu.getBoundingClientRect();
+    var height = rect.height;
+    var hardFloor = window.innerHeight - 8;
     var dock = document.querySelector(".dock");
     if (dock && getComputedStyle(dock).display !== "none") {
-      limit = Math.min(limit, dock.getBoundingClientRect().top - 8);
+      hardFloor = Math.min(hardFloor, dock.getBoundingClientRect().top - 8);
     }
-    var cards = document.getElementById("the-seven");
-    if (cards) {
-      limit = Math.min(limit, cards.getBoundingClientRect().top - 8);
+    var images = document.querySelectorAll(".grid img");
+    for (var i = 0; i < images.length; i++) {
+      hardFloor = Math.min(hardFloor, images[i].getBoundingClientRect().top - 8);
     }
-    var rect = menu.getBoundingClientRect();
-    if (rect.bottom > limit) {
-      menu.style.top = "auto";
-      menu.style.bottom = "calc(100% + .25rem)";
-      rect = menu.getBoundingClientRect();
-      if (rect.top < 8) {
-        menu.style.top = "";
-        menu.style.bottom = "";
-      }
+    var softFloor = hardFloor;
+    var heading = document.querySelector("#the-seven h2");
+    if (heading) softFloor = Math.min(softFloor, heading.getBoundingClientRect().top - 8);
+    var mint = document.querySelector("header .mint");
+    var ceiling = 8;
+    if (mint) ceiling = Math.max(ceiling, mint.getBoundingClientRect().bottom + 8);
+    var top = rect.top;
+    if (top + height > softFloor) top = softFloor - height;
+    if (top < ceiling) top = ceiling;
+    if (top + height > hardFloor) top = hardFloor - height;
+    if (top < 8) top = 8;
+    if (Math.abs(top - rect.top) > 0.5) {
+      menu.style.top = (top - parentTop) + "px";
+      menu.style.bottom = "auto";
     }
     rect = menu.getBoundingClientRect();
     if (rect.right > window.innerWidth - 8) {

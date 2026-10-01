@@ -157,10 +157,15 @@ contract Soft7MascotCards {
     }
 
     /// @notice Pull the caller's accrued dividend.
+    /// @dev Stake math rounds each holder's share down, but the floors can still
+    ///      sum to one wei more than the ETH kept for dividends. Pay what the
+    ///      contract holds so that shortfall cannot revert the whole pull.
     function pull() external {
         _settle(msg.sender);
         uint256 amount = accrued[msg.sender];
-        accrued[msg.sender] = 0;
+        uint256 available = address(this).balance;
+        if (amount > available) amount = available;
+        accrued[msg.sender] -= amount;
         _pay(msg.sender, amount);
         emit Pulled(msg.sender, amount);
     }

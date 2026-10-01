@@ -373,6 +373,69 @@ contract Soft7MascotCardsTest {
         if (address(sink).balance != 0) revert("paid");
     }
 
+    function test_lastPullPaysWhenRoundingOwesOneWeiMore() public {
+        _open();
+        uint256 a1 = _mintPriced(holder, 1 ether);
+        vm.prank(holder);
+        cards.stake(a1);
+        uint256 b1 = _mintPriced(other, 1 ether);
+        vm.prank(other);
+        cards.stake(b1);
+        uint256 c1 = _mintPriced(third, 1 ether);
+        vm.prank(third);
+        cards.stake(c1);
+        uint256 c2 = _mintPriced(third, 0.1 ether);
+        vm.prank(third);
+        cards.stake(c2);
+        uint256 a2 = _mintPriced(holder, 1 ether);
+        vm.prank(holder);
+        cards.stake(a2);
+        uint256 c3 = _mintPriced(third, 1 ether);
+        uint256 b2 = _mintPriced(other, 0.01 ether);
+        vm.prank(other);
+        cards.stake(b2);
+        vm.prank(third);
+        cards.stake(c3);
+
+        vm.warp(uint256(cards.opening()) + 7 days);
+        uint256 b3 = _mintPriced(other, 1 ether);
+        vm.prank(other);
+        cards.stake(b3);
+        vm.prank(other);
+        cards.unstake(b1);
+
+        uint256 owedA = 247304761904761905;
+        uint256 owedB = 127104761904761905;
+        uint256 owedC = 136590476190476191;
+        if (cards.pending(holder) != owedA) revert("a owed");
+        if (cards.pending(other) != owedB) revert("b owed");
+        if (cards.pending(third) != owedC) revert("c owed");
+        if (address(cards).balance + 1 != owedA + owedB + owedC) revert("one wei short");
+
+        uint256 beforeB = other.balance;
+        vm.prank(other);
+        cards.pull();
+        if (other.balance - beforeB != owedB) revert("b pulled");
+
+        uint256 beforeC = third.balance;
+        vm.prank(third);
+        cards.pull();
+        if (third.balance - beforeC != owedC) revert("c pulled");
+
+        uint256 beforeA = holder.balance;
+        vm.prank(holder);
+        cards.pull();
+        if (holder.balance - beforeA != owedA - 1) revert("a paid the balance");
+        if (cards.pending(holder) != 1) revert("a keeps the unpayable wei");
+        if (address(cards).balance != 0) revert("eth left");
+
+        uint256 again = holder.balance;
+        vm.prank(holder);
+        cards.pull();
+        if (holder.balance != again) revert("second pull paid");
+        if (cards.pending(holder) != 1) revert("remainder cleared");
+    }
+
     function test_nineWeiMintPaysTheStakerNothing() public {
         _open();
         uint256 tokenId = _mint(holder);
@@ -420,6 +483,13 @@ contract Soft7MascotCardsTest {
         _pay(account);
         vm.prank(account);
         tokenId = cards.mint{value: PRICE}();
+    }
+
+    function _mintPriced(address account, uint256 price) internal returns (uint256 tokenId) {
+        cards.setMintPrice(price);
+        vm.deal(account, account.balance + price);
+        vm.prank(account);
+        tokenId = cards.mint{value: price}();
     }
 }
 

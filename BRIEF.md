@@ -46,9 +46,9 @@ The Robinhood wallet ending in 77a is `0xe53bdb2118585d5B2cD06a117d3A036AFA70677
 
 Royalty is 7.5% (750 bps), paid to that same wallet on secondary sales.
 
-Integer division can leave dust in the stake accumulator. That dust is not pulled.
+Integer division can leave dust in the stake accumulator. That dust is not pulled. Floors can also sum to one wei more than the ETH held for dividends. `pull` pays the contract balance in that case and leaves the unpaid wei on the holder.
 
-Compile the proof contract with solc 0.8.24, optimizer on, 200 runs, EVM `cancun`, metadata bytecode hash, viaIR off. `scripts/compile_proof.sh` writes `contracts/compiler-input.json`.
+Compile the proof contract with solc 0.8.24, optimizer on, 200 runs, EVM `cancun`, metadata bytecode hash, viaIR off. `scripts/compile_proof.sh` writes `contracts/compiler-input.json`. `DEVELOPERS.md` lists the public functions, the week-by-week cap, and what `scripts/ci.sh` checks.
 
 The proof contract starts with proofs unapproved and waves closed. `approveProofs()` then `openWaves()` are owner calls for after this set is accepted. They have not been sent. No deploy. No mint.
 

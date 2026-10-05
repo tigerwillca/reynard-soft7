@@ -16,7 +16,9 @@ The live collection of 7 is a different contract, `0x73D7b2611509C14078e16f572bE
 bash scripts/ci.sh
 ```
 
-That checks the wave cap, the stake dividend, the supply map, the proof PNG checksums, compiles `contracts/Soft7MascotCards.sol` with solc 0.8.24, and runs that bytecode. The run covers a closed mint, the week-10 cap of 777, the 10% stake pull, two staked cards counting as two shares, and a transfer that clears stake. A pull that the holder rejects leaves the cut in the contract. Nothing is deployed.
+That checks the wave cap, the stake dividend, the supply map, the proof PNG checksums, compiles `contracts/Soft7MascotCards.sol` with solc 0.8.24, and runs that bytecode. The run covers a closed mint, the week-10 cap of 777, the 10% stake pull, two staked cards counting as two shares, and a transfer that clears stake. A pull that the holder rejects leaves the cut in the contract. When stake rounding credits one wei more than the contract holds, the last `pull` pays the balance and leaves that wei accounted. Nothing is deployed.
+
+`DEVELOPERS.md` is the contract surface, the week-by-week cap, the bytecode tests, and the failures those checks report.
 
 Open `proofs/index.html` to see the seven proofs and the banner.
 
@@ -24,7 +26,9 @@ Open `proofs/index.html` to see the seven proofs and the banner.
 
 | Path | What it is |
 | --- | --- |
+| `DEVELOPERS.md` | Contract surface, wave table, bytecode tests, and local-check failures. |
 | `contracts/Soft7MascotCards.sol` | 777-card contract. Proofs start unapproved. Waves start closed. |
+| `test/Soft7MascotCards.t.sol` | Foundry tests for that bytecode. They do not deploy. |
 | `supply/catalog.json` | Token 1–777. Proofs, then unpainted slots. |
 | `proofs/art/` | Seven card PNGs and the banner, with SHA-256 sums. |
 | `proofs/meta/` | Metadata for the seven proofs. |

@@ -36,7 +36,7 @@ The banner is a purple-lime backdrop, Reynard as the hero, and the seventh-gate 
 
 ## Media
 
-One image per token. PNG or GIF. The proof files are real PNGs (`89 50 4E 47`). Image fields in this repository are paths under `proofs/art/`. They are not a jsDelivr pin yet.
+One image per token. PNG or GIF. The proof files are real PNGs (`89 50 4E 47`). Image fields in this repository are paths under `proofs/art/`. They are not a jsDelivr pin yet. `DEVELOPERS.md` is the local server that serves that JSON and the proof files. It does not deploy, and it is not the live contract's base URI.
 
 ## Money
 

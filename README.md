@@ -26,10 +26,13 @@ bash scripts/start_metadata_server.sh
 
 That serves token JSON on port 8000. `GET /1.json` is the shape `tokenURI` uses when the base ends in `/`. Tokens 1–7 are the proof files. Tokens 8–777 are shells: a name, the canon description, and `external_url`. They have no image and no traits. The server does not deploy or mint.
 
+`DEVELOPERS.md` is the route table, the proof and shell JSON, the week-by-week cap, and the failures `scripts/check_metadata.py` reports.
+
 ## Layout
 
 | Path | What it is |
 | --- | --- |
+| `DEVELOPERS.md` | Local metadata routes, token JSON, and the wave page. |
 | `contracts/Soft7MascotCards.sol` | 777-card contract. Proofs start unapproved. Waves start closed. |
 | `supply/catalog.json` | Token 1–777. Proofs, then unpainted slots. |
 | `proofs/art/` | Seven card PNGs and the banner, with SHA-256 sums. |

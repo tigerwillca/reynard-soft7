@@ -58,7 +58,7 @@ The first candidate that fits wins, from this list. Left is clamped into the vie
 5. Just above the cards, same left edge, only when the band between the mint button and the cards is at least as tall as the menu.
 6. The bottom of the allowed area.
 
-If every candidate is rejected, the menu still opens, clamped to that bottom edge and the summary's left. That fallback is not checked against the cards, so it can cover them. `resize` runs the same placement. Changing the status text does not. `Link copied`, and the longer error lines, grow the menu after it has been placed.
+If every candidate is rejected, the menu still opens, clamped to that bottom edge and the summary's left. That fallback is not checked against the cards, so it can cover them. `resize` runs the same placement. Changing the status text does not. On a 1280×900 window the menu opens just above `#the-seven`. `Could not copy the link` then grows it downward, from a bottom edge of about 506px to about 533px, so the status line crosses into the cards. The top edge stays where it was. `Link copied` grows the same way.
 
 ## Card viewer
 

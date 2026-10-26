@@ -20,10 +20,13 @@ That checks the wave cap, the stake dividend, the supply map, the proof PNG chec
 
 Open `proofs/index.html` to see the seven proofs and the banner.
 
+`DEVELOPERS.md` is where that acceptance is stored, and the owner calls that still have to run before this bytecode will mint.
+
 ## Layout
 
 | Path | What it is |
 | --- | --- |
+| `DEVELOPERS.md` | Catalog acceptance, the proof page, and the closed mint gate. |
 | `contracts/Soft7MascotCards.sol` | 777-card contract. Proofs start unapproved. Waves start closed. |
 | `supply/catalog.json` | Token 1–777. Proofs, then unpainted slots. |
 | `proofs/art/` | Seven card PNGs and the banner, with SHA-256 sums. |

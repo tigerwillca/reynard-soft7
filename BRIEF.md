@@ -50,7 +50,7 @@ Integer division can leave dust in the stake accumulator. That dust is not pulle
 
 Compile the proof contract with solc 0.8.24, optimizer on, 200 runs, EVM `cancun`, metadata bytecode hash, viaIR off. `scripts/compile_proof.sh` writes `contracts/compiler-input.json`.
 
-The proof contract starts with proofs unapproved and waves closed. The seven paintings were accepted on 2026-09-30. `approveProofs()` then `openWaves()` are the owner calls that follow that acceptance. They have not been sent. No deploy. No mint.
+The proof contract starts with proofs unapproved and waves closed. The seven paintings were accepted on 2026-09-30. `approveProofs()` then `openWaves()` are the owner calls that follow that acceptance. They have not been sent. No deploy. No mint. `DEVELOPERS.md` is the catalog field, the proof page, and the contract gate those calls still have to pass. `proofsApproved` stays false until `approveProofs()`.
 
 ## What not to do from this repository
 
